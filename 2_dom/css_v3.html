@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 02</title>
+    <style>
+        .caixas{
+            display: flex;
+            justify-content: space-around;
+        }
+        .demo{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            
+        }
+        .c1{
+            background-color: red;
+        }
+        .c2{
+            background-color: green;
+        }
+        .c3{
+            background-color: blue;
+        }
+        .new_class{
+            background-color: sienna;
+        }
+        .girar{
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue"></script>
+
+    <div id="app">
+        <div class="caixas">
+            <div class="demo" :class="style" 
+            @click="aplicarC1 = !aplicarC1"></div>
+            <div class="demo" :class="aplicaCSS"></div>
+            <!-- <div class="demo" :class="[novoEstilo, 'girar']"></div> -->
+            <div class="demo" :class="[novoEstilo, {girar: aplicarGirar}]"></div>
+        </div>
+        <hr>
+        <input type="text" v-model:input="aplicaCSS">
+       
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                aplicarC1: false,
+                novoEstilo: 'new_class',
+                aplicarGirar: true,
+                aplicaCSS: 'c1'
+            },
+            computed:{
+                style(){
+                    return {
+                        c1: this.aplicarC1,
+                        c2: !this.aplicarC1
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

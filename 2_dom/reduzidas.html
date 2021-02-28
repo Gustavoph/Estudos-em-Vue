@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template-01</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <div id="app">
+        <input type="text" :value="contador">
+        <h1>Contador:{{ contador }}</h1>
+        <h2>Resultado: {{ resultado }}</h2>
+        <button @click="somar()">Somar</button>
+        <button @click="subtrair()">Subtrair</button>
+    </div>
+
+    <!-- o @ irá substituir o v-on e o : substitui o v-bind -->
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                contador: 0,
+            },
+            computed:{
+                resultado(){
+                    console.log('Função contador')
+                    return this.contador >= 5 ? 
+                    'Maior igual a 5' : 'Menor igual a 5';
+                }
+            },
+            watch:{
+                contador(novo, antigo){
+                    // setTimeout(() =>{
+                    //     this.contador = 0;
+                    // }, 2000);
+                }
+            },
+            methods:{
+                somar(){
+                    this.contador++;
+                },
+                subtrair(){
+                    this.contador--;
+                    
+                },
+            }
+        })
+    </script>
+</body>
+</html>

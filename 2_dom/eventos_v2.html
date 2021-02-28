@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template-01</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <div id="app">
+        <!-- O v-once só resolve uma unica vez o recurso -->
+        <p>{{ contador }}</p>
+        <button v-on:click="somar">Somar</button>
+        <p v-on:mousemove="attXY">Mouse: {{ x }} e {{ y }}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods:{
+                somar(){
+                    this.contador++;
+                },
+                subtrair(){
+                    this.contador--;
+                },
+                attXY(e){
+                    this.x = e.clientX
+                    this.y = e.clientY
+                }
+            }
+        })
+    </script>
+</body>
+</html>
