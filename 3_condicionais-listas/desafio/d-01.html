@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #zt{
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://unpkg.com/vue"></script>
+<div id="desafio">
+  <h1>Desafios Listas e Condicionais</h1>
+  <!-- 1) Ligue o botão para alternar a exibição dos dois
+    parágrafos. Use ambos v-if e v-show e inspecione os elementos
+    para ver a diferença -->
+  <h2>#01</h2>
+  <div>
+    <p v-if="condicional1">Você quer me ver ...</p>
+    <p v-else>...ou eu</p>
+    <button @click="condicional1 = !condicional1">Alternar</button>
+    
+    <hr>
+
+    <p v-show="condicional2">Você quer me ver ...</p>
+    <p v-show="!condicional2">...ou eu</p>
+    <button @click="condicional2 = !condicional2">Alternar</button>
+  </div>
+
+  <!-- 2) Exiba em uma <ul> um array de elementos da sua escolha.
+    Imprima também o índice de cada elemento. -->
+  <h2>#02</h2>
+  <ul>
+    <li v-for="(game, index) in games" :key="game.id">
+      {{ index }}
+      <span v-for="element in game">
+        - {{element}}
+      </span>
+    </li>
+  </ul>
+  
+  <!-- 3) Imprimir todos os pares de valor-chave do objeto a seguir:
+    {
+			titulo: 'O Senhor dos Anéis',
+			autor: 'J.R.R. Tolkiens',
+			volume: '3'
+		}
+    Imprima também o índice de cada item. -->
+  <h2>#03</h2>
+  <p>{</p>
+  <ul>
+    <li :key="chave" id="zt" v-for="(l, chave) in livro">
+      {{ chave }}: '{{l}}'
+      <!-- <span v-for="itens in l">{{ itens }}</span> -->
+    </li>
+  </ul>
+  <p>{</p>
+  
+  <!-- 4) Imprima o seguinte objeto (somente os valores) e
+    também crie um loop aninhado para o array:
+    {
+			id: 10,
+			nome: 'Maria',
+			notas: [7.67, 8.33, 6.98, 9.21]
+		}
+    (dica: use v-for e v-if na resolução) -->
+  <h2>#04</h2>
+  <ul>
+    <li v-for="(aluno, chave, index) in alunos">
+      <template v-if="!Array.isArray(aluno)">
+        {{chave}}: {{ aluno }}
+      </template>
+      <template v-else="Array.isArray(!aluno)">
+        Notas:
+        <ul>
+          <li v-for="(notas) in aluno">
+            {{ notas }}
+          </li>
+        </ul>
+      </template>
+    </li>
+  </ul>
+</div>
+<script src="d-01.js"></script>
+</body>
+</html>

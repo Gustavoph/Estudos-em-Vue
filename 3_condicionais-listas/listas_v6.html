@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue"></script>
+    <div id="app">
+       <ul>
+           <li v-for="p in pessoas" :key="p.id">{{ p.nome }}</li>
+       </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+                pessoas: [
+                    { id: 1, nome: 'Gustavo', idade: 18, peso: 74 },
+                    { id: 2, nome: 'Giovanna', idade: 18, peso: 60 },
+                ]
+            },
+        })
+    </script>
+</body>
+
+</html>
