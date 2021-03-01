@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.container{
+
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.task{
+    color:black;
+    font-weight: 300;
+}
+
+input{
+    height: 25px;
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+}

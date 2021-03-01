@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
     <div id="app">
-        <input type="text" v-on:input="alteraTitulo">
+        <input type="text" v-on:input="alteraTitulo" :value="titulo">
         <p>{{ titulo }}</p>
     </div>
     <script>
