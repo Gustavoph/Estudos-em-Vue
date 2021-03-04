@@ -1,0 +1,27 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app{
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    margin-top: 110px
+}
+
+.cronometro{
+    font-size: 48px;
+    text-align: center;
+}
+
+.btn{
+    height: 40px;
+    width: 120px;
+    font-size: 20px
+}

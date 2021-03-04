@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cronometro</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue"></script>
+    <div class="container">
+        <div id="app">
+            <h1>{{ hor }}:{{ min }}:{{ seg }}</h1>
+            <v-show v-if="iniciou">
+                <button @click="start">INICIOU</button>
+            </v-show>
+            <v-show v-else>
+                <button @click="reset">REINICIAR</button>
+                <button @click="stop">PARAR</button>
+            </v-show>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
