@@ -21,7 +21,7 @@
 					value="reproduzivel"> Reproduzível</span>
 
 					<span><input type="checkbox" v-model="características"
-					value="intermitente"> Intermitente</span>
+					value="intermitente">Intermitente</span>
 				</Rotulo>
 				<Rotulo nome="Qual produto?">
 					<span class="mr-4"><input type="radio" value="Web" v-model="produto"> Web</span>
