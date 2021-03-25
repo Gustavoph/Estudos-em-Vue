@@ -1,20 +1,30 @@
 <template>
   <div class="usuario">
-      <h2>Usuário</h2>
+      <h2>Usuario</h2>
       <hr>
-      <Router-view/>
-      <button @click="irParaInicio()" sucesso>Voltar</button>
+      <p><strong>Código: </strong>{{ id }}</p>
+      <button sucesso @click="irParaHome">Voltar</button>
   </div>
 </template>
 
 <script>
 export default {
-    methods:{
-        irParaInicio() {
-            // this.$router.push({path: '/'})
-            this.$router.push({name: 'inicio'})
+    props: ['id'],
+    // data() {
+    //     return {
+    //         id: this.$route.params.id
+    //     }
+    // },
+    // watch: {
+    //     $route(to, from){
+    //         this.id = to.params.id
+    //     }
+    // },
+    methods: {
+        irParaHome() {
+            this.$router.push({ path: '/'})
         }
-    }
+    },
 }
 </script>
 

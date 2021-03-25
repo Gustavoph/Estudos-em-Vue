@@ -1,17 +1,16 @@
 <template>
   <div id="app">
     <h1>Rotas com VueRouter</h1>
-    <Router-view name="menu"></Router-view>
-    <transition enter-active-class="animated rubberBand" leave-active-class="animated rollOut">
-      <Router-view />
-    </transition>
+    <Menu />
+    <router-view />
   </div>
 </template>
 
 <script>
-//import Menu from './components/template/Menu.vue'
+
+import Menu from './components/template/Menu.vue';
 export default {
-  //components: { Menu }
+  components: { Menu }
 };
 </script>
 

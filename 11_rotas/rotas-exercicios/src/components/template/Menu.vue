@@ -1,10 +1,14 @@
 <template>
-    <nav class="menu">
-        <ul>
-            <router-link to="/" tag="li" exact active-class="active"><a>Inicio</a></router-link>
-            <router-link to="/usuario" exact active-class="active" tag="li"><a>Usuário</a></router-link>
-        </ul>
-    </nav>
+  <nav class="menu">
+    <ul>
+        <router-link to="/" tag="li" active-class="active" exact>
+        <a>Início</a></router-link>
+        <router-link to="/usuario/1" tag="li" active-class="active" exact>
+        <a>Usuário 1</a></router-link>
+        <router-link to="/usuario/2" tag="li" active-class="active" exact>
+        <a>Usuário 2</a></router-link>
+    </ul>
+  </nav>
 </template>
 
 <script>
