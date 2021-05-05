@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
-    "vue": "^2.5.17",
-    "vue-router": "^3.5.1"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.0.0-beta.53",
